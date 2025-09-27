@@ -3,8 +3,11 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Apple, Wheat, Carrot, Droplet, Flower } from 'lucide-react';
 import productsImage from '@/assets/products-showcase.jpg';
+import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 
 const Products = () => {
+  useScrollAnimation();
+  
   const categories = [
     {
       name: 'Fresh Fruits',
@@ -49,13 +52,13 @@ const Products = () => {
         <div className="max-w-6xl mx-auto">
           {/* Header */}
           <div className="text-center mb-16">
-            <div className="inline-flex items-center px-4 py-2 bg-primary/10 rounded-full text-primary font-medium text-sm mb-6">
+            <div className="inline-flex items-center px-4 py-2 bg-primary/10 rounded-full text-primary font-medium text-sm mb-6 animate-on-scroll hover-scale">
               Premium Product Range
             </div>
-            <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
-              Our <span className="text-gradient">Product Portfolio</span>
+            <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6 animate-on-scroll">
+              Our <span className="text-gradient animate-pulse-glow">Product Portfolio</span>
             </h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto animate-on-scroll">
               We export a diverse range of premium Indian agricultural products, 
               carefully selected and processed to meet international quality standards.
             </p>
@@ -86,11 +89,11 @@ const Products = () => {
             {categories.map((category, index) => {
               const IconComponent = category.icon;
               return (
-                <Card key={index} className="group hover:shadow-hover transition-smooth cursor-pointer border-0 shadow-soft">
+                <Card key={index} className={`group hover-lift cursor-pointer border-0 shadow-soft animate-on-scroll stagger-delay-${index + 1}`}>
                   <CardContent className="p-6">
                     <div className="flex items-center mb-4">
-                      <div className={`p-3 rounded-2xl ${category.color} mr-4`}>
-                        <IconComponent className="w-6 h-6" />
+                      <div className={`p-3 rounded-2xl ${category.color} mr-4 hover-scale`}>
+                        <IconComponent className="w-6 h-6 animate-bounce-gentle" />
                       </div>
                       <h3 className="text-lg font-semibold">{category.name}</h3>
                     </div>
@@ -113,7 +116,7 @@ const Products = () => {
           </div>
 
           {/* CTA Section */}
-          <div className="text-center bg-gradient-to-r from-primary/5 to-accent/5 rounded-3xl p-8 lg:p-12">
+          <div className="text-center bg-gradient-to-r from-primary/5 to-accent/5 rounded-3xl p-8 lg:p-12 animate-on-scroll hover-lift">
             <h3 className="text-2xl lg:text-3xl font-display font-bold mb-4">
               Ready to Import Premium Indian Products?
             </h3>
@@ -122,10 +125,10 @@ const Products = () => {
               pricing, and delivery schedules for any of our product categories.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-gradient-to-r from-primary to-primary-light">
+              <Button size="lg" className="bg-gradient-to-r from-primary to-primary-light hover-lift animate-pulse-glow">
                 Request Product Catalog
               </Button>
-              <Button variant="outline" size="lg" className="border-primary text-primary">
+              <Button variant="outline" size="lg" className="border-primary text-primary hover-lift">
                 Get Custom Quote
               </Button>
             </div>

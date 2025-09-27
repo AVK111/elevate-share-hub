@@ -1,8 +1,11 @@
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { MapPin, Phone, Mail, Globe, Users, CheckCircle } from 'lucide-react';
+import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 
 const About = () => {
+  useScrollAnimation();
+  
   const features = [
     {
       icon: Globe,
@@ -71,16 +74,16 @@ const About = () => {
               </div>
 
               {/* Features */}
-              <div className="space-y-6">
+                  <div className="space-y-6">
                 {features.map((feature, index) => {
                   const IconComponent = feature.icon;
                   return (
-                    <Card key={index} className="border-0 shadow-soft hover:shadow-hover transition-smooth">
+                    <Card key={index} className={`border-0 shadow-soft hover-lift animate-on-scroll stagger-delay-${index + 1}`}>
                       <CardContent className="p-6">
                         <div className="flex items-start space-x-4">
                           <div className="flex-shrink-0">
-                            <div className="w-12 h-12 bg-primary/10 rounded-2xl flex items-center justify-center">
-                              <IconComponent className="w-6 h-6 text-primary" />
+                            <div className="w-12 h-12 bg-primary/10 rounded-2xl flex items-center justify-center hover-scale">
+                              <IconComponent className="w-6 h-6 text-primary animate-bounce-gentle" />
                             </div>
                           </div>
                           <div>
@@ -117,9 +120,9 @@ const About = () => {
               {certifications.map((cert, index) => (
                 <div
                   key={index}
-                  className="flex items-center space-x-3 p-4 bg-card rounded-2xl shadow-soft hover:shadow-hover transition-smooth"
+                  className={`flex items-center space-x-3 p-4 bg-card rounded-2xl shadow-soft hover-lift animate-on-scroll stagger-delay-${(index % 3) + 1}`}
                 >
-                  <CheckCircle className="w-5 h-5 text-primary flex-shrink-0" />
+                  <CheckCircle className="w-5 h-5 text-primary flex-shrink-0 animate-bounce-gentle" />
                   <span className="text-sm font-medium text-left">{cert}</span>
                 </div>
               ))}
@@ -190,7 +193,7 @@ const About = () => {
               </div>
 
               {/* CTA Card */}
-              <Card className="border-0 shadow-soft">
+              <Card className="border-0 shadow-soft hover-lift animate-on-scroll">
                 <CardContent className="p-8">
                   <h3 className="text-xl font-semibold mb-4">Ready to Import?</h3>
                   <p className="text-muted-foreground mb-6">
@@ -198,13 +201,13 @@ const About = () => {
                     pricing, and delivery schedules.
                   </p>
                   <div className="space-y-3">
-                    <Button className="w-full bg-gradient-to-r from-primary to-primary-light">
+                    <Button className="w-full bg-gradient-to-r from-primary to-primary-light hover-lift animate-pulse-glow">
                       Request Product Catalog
                     </Button>
-                    <Button variant="outline" className="w-full border-primary text-primary">
+                    <Button variant="outline" className="w-full border-primary text-primary hover-lift">
                       Schedule a Call
                     </Button>
-                    <Button variant="ghost" className="w-full text-primary">
+                    <Button variant="ghost" className="w-full text-primary hover-scale">
                       Send Email Inquiry
                     </Button>
                   </div>

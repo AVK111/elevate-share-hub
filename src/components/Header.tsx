@@ -16,12 +16,12 @@ const Header = () => {
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b shadow-soft">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b shadow-soft animate-fade-in">
       <div className="container mx-auto px-4 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
           <div className="flex items-center space-x-3">
-            <img src={logo} alt="Parthaj Orchard" className="h-10 lg:h-12 w-auto" />
+            <img src={logo} alt="Parthaj Orchard" className="h-10 lg:h-12 w-auto hover-scale animate-bounce-gentle" />
             <div className="hidden sm:block">
               <h1 className="text-xl lg:text-2xl font-display font-semibold text-gradient">
                 PARTHAJ ORCHARD
@@ -52,7 +52,7 @@ const Header = () => {
                 className="pl-10 w-48 bg-muted/50 border-0"
               />
             </div>
-            <Button className="bg-gradient-to-r from-primary to-primary-light hover:shadow-hover transition-smooth">
+            <Button className="bg-gradient-to-r from-primary to-primary-light hover:shadow-hover transition-smooth animate-pulse-glow">
               Get Quote
             </Button>
           </div>

@@ -1,28 +1,41 @@
 import { Button } from '@/components/ui/button';
 import { MapPin, Phone, Mail, Globe } from 'lucide-react';
 import logo from '@/assets/logo.png';
-
 const Footer = () => {
   const currentYear = new Date().getFullYear();
-  
-  const quickLinks = [
-    { name: 'Home', href: '#home' },
-    { name: 'Products', href: '#products' },
-    { name: 'About Us', href: '#about' },
-    { name: 'Certificates', href: '#certificates' },
-    { name: 'Contact', href: '#contact' }
-  ];
-
-  const productCategories = [
-    { name: 'Fruits', href: '#products' },
-    { name: 'Vegetables', href: '#products' },
-    { name: 'Grains', href: '#products' },
-    { name: 'Oil Seeds', href: '#products' },
-    { name: 'Spices', href: '#products' }
-  ];
-
-  return (
-    <footer className="bg-primary-dark text-primary-foreground">
+  const quickLinks = [{
+    name: 'Home',
+    href: '#home'
+  }, {
+    name: 'Products',
+    href: '#products'
+  }, {
+    name: 'About Us',
+    href: '#about'
+  }, {
+    name: 'Certificates',
+    href: '#certificates'
+  }, {
+    name: 'Contact',
+    href: '#contact'
+  }];
+  const productCategories = [{
+    name: 'Fruits',
+    href: '#products'
+  }, {
+    name: 'Vegetables',
+    href: '#products'
+  }, {
+    name: 'Grains',
+    href: '#products'
+  }, {
+    name: 'Oil Seeds',
+    href: '#products'
+  }, {
+    name: 'Spices',
+    href: '#products'
+  }];
+  return <footer className="bg-primary-dark text-primary-foreground">
       <div className="container mx-auto px-4 lg:px-8">
         {/* Main Footer Content */}
         <div className="py-16 lg:py-20">
@@ -66,16 +79,11 @@ const Footer = () => {
             <div className="space-y-6">
               <h4 className="text-lg font-semibold">Quick Links</h4>
               <ul className="space-y-3">
-                {quickLinks.map((link) => (
-                  <li key={link.name}>
-                    <a
-                      href={link.href}
-                      className="text-primary-foreground/80 hover:text-primary-foreground transition-smooth text-sm"
-                    >
+                {quickLinks.map(link => <li key={link.name}>
+                    <a href={link.href} className="text-primary-foreground/80 hover:text-primary-foreground transition-smooth text-sm">
                       {link.name}
                     </a>
-                  </li>
-                ))}
+                  </li>)}
               </ul>
             </div>
 
@@ -83,16 +91,11 @@ const Footer = () => {
             <div className="space-y-6">
               <h4 className="text-lg font-semibold">Product Categories</h4>
               <ul className="space-y-3">
-                {productCategories.map((category) => (
-                  <li key={category.name}>
-                    <a
-                      href={category.href}
-                      className="text-primary-foreground/80 hover:text-primary-foreground transition-smooth text-sm"
-                    >
+                {productCategories.map(category => <li key={category.name}>
+                    <a href={category.href} className="text-primary-foreground/80 hover:text-primary-foreground transition-smooth text-sm">
                       {category.name}
                     </a>
-                  </li>
-                ))}
+                  </li>)}
               </ul>
             </div>
 
@@ -103,16 +106,10 @@ const Footer = () => {
                 Ready to import premium Indian agricultural products? Get in touch with our export team.
               </p>
               <div className="space-y-3">
-                <Button 
-                  variant="secondary" 
-                  className="w-full bg-primary-foreground text-primary hover:bg-primary-foreground/90"
-                >
+                <Button variant="secondary" className="w-full bg-primary-foreground text-primary hover:bg-primary-foreground/90">
                   Get Quote
                 </Button>
-                <Button 
-                  variant="outline" 
-                  className="w-full border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10"
-                >
+                <Button variant="outline" className="w-full border-primary-foreground/30 hover:bg-primary-foreground/10 text-green-800">
                   Download Catalog
                 </Button>
               </div>
@@ -127,24 +124,16 @@ const Footer = () => {
               © {currentYear} PARTHAJ ORCHARD Pvt. Ltd. All rights reserved.
             </p>
             <div className="flex space-x-6">
-              <a 
-                href="#privacy" 
-                className="text-primary-foreground/70 hover:text-primary-foreground transition-smooth text-sm"
-              >
+              <a href="#privacy" className="text-primary-foreground/70 hover:text-primary-foreground transition-smooth text-sm">
                 Privacy Policy
               </a>
-              <a 
-                href="#terms" 
-                className="text-primary-foreground/70 hover:text-primary-foreground transition-smooth text-sm"
-              >
+              <a href="#terms" className="text-primary-foreground/70 hover:text-primary-foreground transition-smooth text-sm">
                 Terms of Service
               </a>
             </div>
           </div>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
-
 export default Footer;

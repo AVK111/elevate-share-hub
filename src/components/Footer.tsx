@@ -109,7 +109,7 @@ const Footer = () => {
                 <Button variant="secondary" className="w-full bg-primary-foreground text-primary hover:bg-primary-foreground/90">
                   Get Quote
                 </Button>
-                <Button variant="outline" className="w-full border-primary-foreground/30 hover:bg-primary-foreground/10 text-green-800">
+                <Button variant="outline" className="w-full bg-primary-foreground text-primary hover:bg-primary-foreground/90">
                   Download Catalog
                 </Button>
               </div>

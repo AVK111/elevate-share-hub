@@ -43,7 +43,7 @@ const Footer = () => {
             {/* Company Info */}
             <div className="lg:col-span-1 space-y-6">
               <div className="flex items-center space-x-3">
-                <img src={logo} alt="Parthaj Orchard" className="h-12 w-auto brightness-0 invert" />
+                <img src={logo} alt="Parthaj Orchard" className="h-12 w-auto" />
                 <div>
                   <h3 className="text-xl font-display font-bold">PARTHAJ ORCHARD</h3>
                   <p className="text-primary-foreground/70 text-sm">Pvt. Ltd.</p>

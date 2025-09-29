@@ -18,9 +18,9 @@ const Header = () => {
   return (
     <>
       {/* Fixed Logo - Always visible at top left */}
-      <div className="fixed top-4 left-4 z-50 bg-background/95 backdrop-blur-sm rounded-lg p-3 shadow-lg border border-border animate-bounce-gentle">
+      <div className="fixed top-4 left-4 z-50 bg-background/95 backdrop-blur-sm rounded-lg p-3 shadow-lg border border-border">
         <div className="flex items-center space-x-2">
-          <img src={logo} alt="Parthaj Orchard" className="h-8 w-auto hover-scale" />
+          <img src={logo} alt="Parthaj Orchard" className="h-8 w-auto" />
           <div className="hidden sm:block">
             <h1 className="text-sm font-display font-semibold text-gradient">
               PARTHAJ ORCHARD

@@ -4,14 +4,20 @@ import { Badge } from '@/components/ui/badge';
 import { Apple, Wheat, Carrot, Droplet, Flower } from 'lucide-react';
 import productsImage from '@/assets/products-showcase.jpg';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
+import fruitImage from '@/assets/fresh-fruit-bg.jpg'
+import vegetableImage from '@/assets/fresh-vegetables-bg.webp'
+import grainsImage from '@/assets/grains-and-cereals-bg.webp'
+import seedsImage from '@/assets/oil-seeds-bg.jpg'
+import spicesImage from '@/assets/spices-herbs-bg.jpg'
 
 const Products = () => {
   useScrollAnimation();
   
   const categories = [
-    {
+    { 
       name: 'Fresh Fruits',
       icon: Apple,
+      image: fruitImage,
       items: ['Mangoes', 'Bananas', 'Grapes', 'Pomegranates', 'Oranges'],
       color: 'bg-red-100 text-red-700',
       description: 'Premium fresh fruits sourced directly from Indian orchards'
@@ -19,6 +25,7 @@ const Products = () => {
     {
       name: 'Vegetables',
       icon: Carrot,
+      image: vegetableImage,
       items: ['Onions', 'Potatoes', 'Tomatoes', 'Peppers', 'Okra'],
       color: 'bg-green-100 text-green-700',
       description: 'Farm-fresh vegetables with extended shelf life'
@@ -26,6 +33,7 @@ const Products = () => {
     {
       name: 'Grains & Cereals',
       icon: Wheat,
+      image: grainsImage,
       items: ['Basmati Rice', 'Wheat', 'Millets', 'Pulses', 'Lentils'],
       color: 'bg-amber-100 text-amber-700',
       description: 'High-quality grains meeting international standards'
@@ -33,6 +41,7 @@ const Products = () => {
     {
       name: 'Oil Seeds',
       icon: Droplet,
+      image: seedsImage,
       items: ['Sesame', 'Mustard', 'Sunflower', 'Groundnut', 'Castor'],
       color: 'bg-yellow-100 text-yellow-700',
       description: 'Premium oil seeds with high oil content'
@@ -40,6 +49,7 @@ const Products = () => {
     {
       name: 'Spices & Herbs',
       icon: Flower,
+      image: spicesImage,
       items: ['Turmeric', 'Cumin', 'Coriander', 'Cardamom', 'Black Pepper'],
       color: 'bg-orange-100 text-orange-700',
       description: 'Aromatic spices and herbs with authentic flavors'
@@ -63,7 +73,6 @@ const Products = () => {
               carefully selected and processed to meet international quality standards.
             </p>
           </div>
-
           {/* Featured Image */}
           <div className="mb-16">
             <div className="relative rounded-3xl overflow-hidden shadow-soft">
@@ -91,25 +100,34 @@ const Products = () => {
               return (
                 <Card key={index} className={`group hover-lift cursor-pointer border-0 shadow-soft animate-on-scroll stagger-delay-${index + 1}`}>
                   <CardContent className="p-6">
-                    <div className="flex items-center mb-4">
-                      <div className={`p-3 rounded-2xl ${category.color} mr-4 hover-scale`}>
-                        <IconComponent className="w-6 h-6 animate-bounce-gentle" />
-                      </div>
-                      <h3 className="text-lg font-semibold">{category.name}</h3>
+                  {/* Category Image */}
+                  <img
+                    src={category.image}      // <-- your imported image
+                    alt={category.name}
+                    className="w-full h-32 object-cover rounded-lg mb-4"
+                  />
+
+                  {/* Category Icon + Name */}
+                  <div className="flex items-center mb-4">
+                    <div className={`p-3 rounded-2xl ${category.color} mr-4 hover-scale`}>
+                      <IconComponent className="w-6 h-6 animate-bounce-gentle" />
                     </div>
-                    
-                    <p className="text-muted-foreground text-sm mb-4">
-                      {category.description}
-                    </p>
-                    
-                    <div className="flex flex-wrap gap-2">
-                      {category.items.map((item, itemIndex) => (
-                        <Badge key={itemIndex} variant="secondary" className="text-xs">
-                          {item}
-                        </Badge>
-                      ))}
-                    </div>
-                  </CardContent>
+                    <h3 className="text-lg font-semibold">{category.name}</h3>
+                  </div>
+
+                  {/* Description */}
+                  <p className="text-muted-foreground text-sm mb-4">{category.description}</p>
+
+                  {/* Items */}
+                  <div className="flex flex-wrap gap-2">
+                    {category.items.map((item, itemIndex) => (
+                      <Badge key={itemIndex} variant="secondary" className="text-xs">
+                        {item}
+                      </Badge>
+                    ))}
+                  </div>
+                </CardContent>
+
                 </Card>
               );
             })}
@@ -135,6 +153,7 @@ const Products = () => {
           </div>
         </div>
       </div>
+      
     </section>
   );
 };

@@ -13,7 +13,7 @@ const Hero = () => {
         <img
           src={heroImage}
           alt="Premium Indian Agricultural Products"
-          className="w-full h-full object-cover opacity-10"
+          className="w-full h-full object-cover opacity-70"
         />
         <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/10" />
       </div>
@@ -35,7 +35,7 @@ const Hero = () => {
                   {' '}to Global Markets
                 </h1>
                 
-                <p className="text-lg lg:text-xl text-muted-foreground leading-relaxed animate-fade-in-right">
+                <p className="text-lg lg:text-xl color:black leading-relaxed animate-fade-in-right">
                   PARTHAJ ORCHARD Pvt. Ltd. - Your trusted partner for premium Indian agricultural exports. 
                   We bring the finest fruits, vegetables, grains, oil seeds, and spices from local farms 
                   to international markets with unwavering commitment to quality and sustainability.

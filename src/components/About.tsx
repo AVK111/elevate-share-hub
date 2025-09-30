@@ -49,7 +49,7 @@ const About = () => {
                   <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
                     Leading <span className="text-gradient">Agricultural Exporter</span>
                   </h2>
-                  <p className="text-lg text-muted-foreground leading-relaxed">
+                  <p className="text-lg text-muted-foreground">
                     PARTHAJ ORCHARD Pvt. Ltd. is an emerging leader in the export of premium Indian 
                     agricultural products. Founded with a vision to connect local farms to global markets, 
                     we have built strong relationships with farmers across India and international buyers worldwide.
@@ -57,12 +57,12 @@ const About = () => {
                 </div>
 
                 <div className="space-y-4">
-                  <p className="text-muted-foreground">
+                  <p className="text-lg text-muted-foreground ">
                     Our commitment to quality and sustainability drives everything we do. We work closely 
                     with farmers to ensure sustainable farming practices while maintaining the highest 
                     standards of product quality and food safety.
                   </p>
-                  <p className="text-muted-foreground">
+                  <p className="text-lg text-muted-foreground">
                     With our state-of-the-art processing facilities and cold chain management, we ensure 
                     that our products retain their freshness and nutritional value throughout the supply chain.
                   </p>
